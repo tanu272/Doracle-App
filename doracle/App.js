@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, Image } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { Button } from './Button';
@@ -25,14 +25,23 @@ function HomeScreen ({ navigation }) {
       />
     </View>
   );
-};
+}
 function HospitalScreen ({ navigation, route }) {
   return <Text>Welcome to {route.params.name} Hospital!</Text>;
-};
+}
 
 function PatientScreen ({ navigation, route }) {
   return <Text>Hello again Patient {route.params.name}!</Text>;
-};
+}
+
+function LogoTitle() {
+  return (
+    <Image
+      style={{ width: 100, height: 100 }}
+      source={require('./DORACLE.png')}
+    />
+  );
+}
 
 const Stack = createStackNavigator();
 
@@ -52,8 +61,7 @@ function App() {
         <Stack.Screen 
         name="Home" 
         component={HomeScreen}
-        options={{
-          title: 'My home'}} 
+        options={{ headerTitle: props => <LogoTitle {...props} /> }} 
         />
         <Stack.Screen name="Hospital" 
         component={HospitalScreen} 
