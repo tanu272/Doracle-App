@@ -51,7 +51,7 @@ hospitals.</strong><br>
   <a href="https://github.com/facebook/react-native/blob/master/.github/SUPPORT.md">Support</a>
 </h3>
 
-<p align="center">
+<p>
   Doracle is a patient management system useful for hospitals as well as patients. We intend to develop a secure, scalable application that adopts a set of revolutionizing steps that will pave the way to a better-managed hospital that will be able to provide superior healthcare advantages to its patients. Families no longer have to wait in long queues in dire situations waiting to know how their patient is. They will be provided a unique login credential for their patient with which, they will be able to login into the application and access real-time updates on the treatment status of their patients.
 </p>
 
