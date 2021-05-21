@@ -100,7 +100,7 @@ React Native apps may target iOS 11.0 and Android 5.0 (API 21) or newer. You may
 
 ## 📖 Documentation
 
-The full documentation for Expo can be found on our [here][docs] and for Expo [here][docs1].
+The full documentation for React Native can be found on our [here][docs] and for Expo [here][docs1].
 
 The React Native documentation discusses components, APIs, and topics that are specific to React Native. For further documentation on the React API that is shared between React Native and React DOM, refer to the [React documentation][r-docs].
 
