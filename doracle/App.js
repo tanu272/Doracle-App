@@ -4,7 +4,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { Button } from './Button';
 
-const HomeScreen = ({ navigation }) => {
+function HomeScreen ({ navigation }) {
   return (
     <View style={styles.container}>
       <Text style={styles.text}>
@@ -26,11 +26,11 @@ const HomeScreen = ({ navigation }) => {
     </View>
   );
 };
-const HospitalScreen = ({ navigation, route }) => {
+function HospitalScreen ({ navigation, route }) {
   return <Text>Welcome to {route.params.name} Hospital!</Text>;
 };
 
-const PatientScreen = ({ navigation, route }) => {
+function PatientScreen ({ navigation, route }) {
   return <Text>Hello again Patient {route.params.name}!</Text>;
 };
 
@@ -39,10 +39,33 @@ const Stack = createStackNavigator();
 function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Home">
-        <Stack.Screen name="Home" component={HomeScreen} />
-        <Stack.Screen name="Hospital" component={HospitalScreen} />
-        <Stack.Screen name="Patient" component={PatientScreen} />
+      <Stack.Navigator initialRouteName="Home"
+      screenOptions={{
+        headerStyle: {
+          backgroundColor: 'black',
+        },
+        headerTintColor: '#fff',
+        headerTitleStyle: {
+          fontWeight: 'bold',
+        },
+      }}>
+        <Stack.Screen 
+        name="Home" 
+        component={HomeScreen}
+        options={{
+          title: 'My home'}} 
+        />
+        <Stack.Screen name="Hospital" 
+        component={HospitalScreen} 
+        options={
+          ({ route }) => ({ title: route.params.name })
+          }
+        />
+        <Stack.Screen 
+        name="Patient" 
+        component={PatientScreen} 
+        options={({ route }) => ({ title: route.params.name })}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
