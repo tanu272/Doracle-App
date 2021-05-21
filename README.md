@@ -51,6 +51,11 @@ hospitals.</strong><br>
   <a href="https://github.com/facebook/react-native/blob/master/.github/SUPPORT.md">Support</a>
 </h3>
 
+<p align="center">
+  Doracle is a patient management system useful for hospitals as well as patients. We intend to develop a secure, scalable application that adopts a set of revolutionizing steps that will pave the way to a better-managed hospital that will be able to provide superior healthcare advantages to its patients. Families no longer have to wait in long queues in dire situations waiting to know how their patient is. They will be provided a unique login credential for their patient with which, they will be able to login into the application and access real-time updates on the treatment status of their patients.
+</p>
+
+<strong>Doracle is made with Expo, a React-Native framework.</strong>
 React Native brings [**React**'s][r] declarative UI framework to iOS and Android. With React Native, you use native UI controls and have full access to the native platform.
 
 - **Declarative.** React makes it painless to create interactive UIs. Declarative views make your code more predictable and easier to debug.
@@ -58,16 +63,15 @@ React Native brings [**React**'s][r] declarative UI framework to iOS and Android
 - **Developer Velocity.** See local changes in seconds. Changes to JavaScript code can be live reloaded without rebuilding the native app.
 - **Portability.** Reuse code across iOS, Android, and [other platforms][p].
 
-React Native is developed and supported by many companies and individual core contributors. Find out more in our [ecosystem overview][e].
+React Native is developed and supported by many companies and individual core contributors. 
 
 [r]: https://reactjs.org/
 [p]: https://reactnative.dev/docs/out-of-tree-platforms
-[e]: https://github.com/facebook/react-native/blob/master/ECOSYSTEM.md
 
 ## Contents
 
 - [Requirements](#-requirements)
-- [Building your first React Native app](#-building-your-first-react-native-app)
+- [Run project in development](#-run-project-in-development)
 - [Documentation](#-documentation)
 - [Upgrading](#-upgrading)
 - [How to Contribute](#-how-to-contribute)
@@ -79,29 +83,30 @@ React Native is developed and supported by many companies and individual core co
 
 React Native apps may target iOS 11.0 and Android 5.0 (API 21) or newer. You may use Windows, macOS, or Linux as your development operating system, though building and running iOS apps is limited to macOS. Tools like [Expo](https://expo.io) can be used to work around this.
 
-## 🎉 Building your first React Native app
+## 🎉 Run project in development
 
-Follow the [Getting Started guide](https://reactnative.dev/docs/getting-started). The recommended way to install React Native depends on your project. Here you can find short guides for the most common scenarios:
+- Setting up the development environment: https://reactnative.dev/docs/environment-setup.
 
-- [Trying out React Native][hello-world]
-- [Creating a New Application][new-app]
-- [Adding React Native to an Existing Application][existing]
+- Install dependencies: `yarn install` (or `npm install`).
 
-[hello-world]: https://snack.expo.io/@hramos/hello,-world!
-[new-app]: https://reactnative.dev/docs/getting-started
-[existing]: https://reactnative.dev/docs/integration-with-existing-apps
+- Run on Android: `yarn android` (or `npm run android`).
+
+- Run on iOS: `yarn ios` (or `npm run ios`).
+
+- Run on both Android & iOS: `yarn mobile` (or `npm run mobile`).
+
+-Scan QR code and scan it from Expo Go app in your phone.
+  <img src="https://user-images.githubusercontent.com/12640832/111438246-999b2f00-8736-11eb-8be3-509e5db3f48b.png" alt="React Native Expo Examples" />
 
 ## 📖 Documentation
 
-The full documentation for React Native can be found on our [website][docs].
+The full documentation for Expo can be found on our [here][docs] and for Expo [here][docs1].
 
 The React Native documentation discusses components, APIs, and topics that are specific to React Native. For further documentation on the React API that is shared between React Native and React DOM, refer to the [React documentation][r-docs].
 
-The source for the React Native documentation and website is hosted on a separate repo, [**@facebook/react-native-website**][repo-website].
-
 [docs]: https://reactnative.dev/docs/getting-started
+[docs1]: https://docs.expo.io/get-started/installation/
 [r-docs]: https://reactjs.org/docs/getting-started.html
-[repo-website]: https://github.com/facebook/react-native-website
 
 ## 🚀 Upgrading
 
@@ -116,7 +121,6 @@ React Native releases are discussed in the React Native Community, [**@react-nat
 
 The main purpose of this repository is to continue evolving React Native core. We want to make contributing to this project as easy and transparent as possible, and we are grateful to the community for contributing bug fixes and improvements. Read below to learn how you can take part in improving React Native. Read our [**Contributing Guide**][contribute] to learn about our development process, how to propose bugfixes and improvements, and how to build and test your changes to React Native.
 
-[contribute]: 
 
 ### [Code of Conduct][code]
 
