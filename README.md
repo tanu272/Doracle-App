@@ -3,13 +3,17 @@
 
 <h1 align="center">
   <a href="https://reactnative.dev/">
-    React Native
+    React Native 
+  </a>
+  and 
+  <a href ="https://expo.io/">
+     Expo
   </a>
 </h1>
 
 <p align="center">
-  <strong>Learn once, write anywhere:</strong><br>
-  Build mobile apps with React.
+  <strong>A one-stop solution to monitor your patient - for the families as well as
+hospitals.</strong><br>
 </p>
 
 <p align="center">
@@ -27,6 +31,9 @@
   </a>
   <a href="https://twitter.com/intent/follow?screen_name=reactnative">
     <img src="https://img.shields.io/twitter/follow/reactnative.svg?label=Follow%20@reactnative" alt="Follow @reactnative" />
+  </a>
+  <a href="https://twitter.com/intent/follow?screen_name=expo">
+    <img src="https://img.shields.io/twitter/follow/expo.svg?label=Follow%20@expo" alt="Follow @expo" />
   </a>
 </p>
 
@@ -107,44 +114,19 @@ React Native releases are discussed in the React Native Community, [**@react-nat
 
 ## 👏 How to Contribute
 
-The main purpose of this repository is to continue evolving React Native core. We want to make contributing to this project as easy and transparent as possible, and we are grateful to the community for contributing bug fixes and improvements. Read below to learn how you can take part in improving React Native.
+The main purpose of this repository is to continue evolving React Native core. We want to make contributing to this project as easy and transparent as possible, and we are grateful to the community for contributing bug fixes and improvements. Read below to learn how you can take part in improving React Native. Read our [**Contributing Guide**][contribute] to learn about our development process, how to propose bugfixes and improvements, and how to build and test your changes to React Native.
+
+[contribute]: 
 
 ### [Code of Conduct][code]
 
-Facebook has adopted a Code of Conduct that we expect project participants to adhere to.
+Doracle has adopted a Code of Conduct that we expect project participants to adhere to.
 Please read the [full text][code] so that you can understand what actions will and will not be tolerated.
 
-[code]: https://code.fb.com/codeofconduct/
-
-### [Contributing Guide][contribute]
-
-Read our [**Contributing Guide**][contribute] to learn about our development process, how to propose bugfixes and improvements, and how to build and test your changes to React Native.
-
-[contribute]: https://reactnative.dev/docs/contributing
-
-### [Open Source Roadmap][roadmap]
-
-You can learn more about our vision for React Native in the [**Roadmap**][roadmap].
-
-[roadmap]: https://github.com/facebook/react-native/wiki/Roadmap
-
-### Good First Issues
-
-We have a list of [good first issues][gfi] that contain bugs which have a relatively limited scope. This is a great place to get started, gain experience, and get familiar with our contribution process.
-
-[gfi]: https://github.com/facebook/react-native/labels/good%20first%20issue
-
-### Discussions
-
-Larger discussions and proposals are discussed in [**@react-native-community/discussions-and-proposals**][repo-meta].
-
-[repo-meta]: https://github.com/react-native-community/discussions-and-proposals
+[code]: 
 
 ## 📄 License
 
-React Native is MIT licensed, as found in the [LICENSE][l] file.
+Doracle is MIT licensed, as found in the [LICENSE][l] file.
 
-React Native documentation is Creative Commons licensed, as found in the [LICENSE-docs][ld] file.
-
-[l]: https://github.com/facebook/react-native/blob/master/LICENSE
-[ld]: https://github.com/facebook/react-native/blob/master/LICENSE-docs
+[l]: https://github.com/tanu272/Doracle-App/blob/main/LICENSE
