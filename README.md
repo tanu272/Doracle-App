@@ -122,12 +122,12 @@ React Native releases are discussed in the React Native Community, [**@react-nat
 The main purpose of this repository is to continue evolving React Native core. We want to make contributing to this project as easy and transparent as possible, and we are grateful to the community for contributing bug fixes and improvements. Read below to learn how you can take part in improving React Native. Read our [**Contributing Guide**][contribute] to learn about our development process, how to propose bugfixes and improvements, and how to build and test your changes to React Native.
 
 
-### [Code of Conduct][code]
+### Code of Conduct
 
 Doracle has adopted a Code of Conduct that we expect project participants to adhere to.
-Please read the [full text][code] so that you can understand what actions will and will not be tolerated.
+Please read the [full text][code1] so that you can understand what actions will and will not be tolerated.
 
-[code]: 
+[code1]: 
 
 ## 📄 License
 
