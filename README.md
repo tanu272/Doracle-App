@@ -95,7 +95,7 @@ React Native apps may target iOS 11.0 and Android 5.0 (API 21) or newer. You may
 
 - Run on both Android & iOS: `yarn mobile` (or `npm run mobile`).
 
-- Scan QR code and scan it from Expo Go app in your phone. 
+- Get QR code from localhost and scan it from Expo Go app in your phone. 
   <img src="https://user-images.githubusercontent.com/12640832/111438246-999b2f00-8736-11eb-8be3-509e5db3f48b.png" alt="React Native Expo Examples" />
 
 ## 📖 Documentation
