@@ -13,7 +13,7 @@ function HomeScreen ({ navigation }) {
       <Button
         text="Login as Hospital"
         onPress={() =>
-          navigation.navigate('Hospital', { name: 'XYZ' })
+          navigation.navigate('Hospital Login', { name: 'XYZ' })
         }
       />
       <Text>{"\n"}</Text>
@@ -54,9 +54,38 @@ function PLoginScreen ({navigation})  {
           <TouchableOpacity style={styles.loginBtn}>
             <Text style={styles.loginText}>LOGIN</Text>
           </TouchableOpacity>
-          <TouchableOpacity>
-            <Text style={styles.loginText}>Signup</Text>
+      </View>
+  );
+}
+
+function HLoginScreen ({navigation})  {
+  const [id, setText2] = useState('');
+  const [password, setText3] = useState('');
+  return (
+    <View style={styles.container}>
+        <View style={styles.inputView} >
+          <TextInput  
+            style={styles.inputText}
+            placeholder="Hospital Id..." 
+            placeholderTextColor="#003f5c"
+            onChangeText={id => setText2(id)} />
+        </View>
+          
+        <View style={styles.inputView} >
+              <TextInput  
+                secureTextEntry
+                style={styles.inputText}
+                placeholder="Hospital Password..." 
+                placeholderTextColor="#003f5c"
+                onChangeText={id => setText3(id)}/>
+        </View>
+        <TouchableOpacity>
+            <Text style={styles.forgot}>Forgot Password?</Text>
           </TouchableOpacity>
+          <TouchableOpacity style={styles.loginBtn}>
+            <Text style={styles.loginText}>LOGIN</Text>
+          </TouchableOpacity>
+          
       </View>
   );
 }
@@ -77,6 +106,9 @@ function LogoTitle() {
     />
   );
 }
+
+
+
 
 const Stack = createStackNavigator();
 
@@ -105,6 +137,10 @@ class App extends React.Component {
         />
         <Stack.Screen name="Patient Login" 
         component={PLoginScreen} 
+        />
+        <Stack.Screen name="Hospital Login" 
+        component={HLoginScreen}
+        options={({ route }) => ({ title: route.params.name })}
         />
         <Stack.Screen name="Hospital" 
         component={HospitalScreen} 
