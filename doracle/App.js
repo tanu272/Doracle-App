@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { View, Text, Image, TextInput, StyleSheet, TouchableOpacity } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+import PLoginScreen from './PLoginScreen';
+import HLoginScreen from './HLoginScreen';
 import { Button } from './Button';
 
 function HomeScreen ({ navigation }) {
@@ -27,69 +29,6 @@ function HomeScreen ({ navigation }) {
   );
 }
 
-function PLoginScreen ({navigation})  {
-  const [id, setText] = useState('');
-  const [password, setText1] = useState('');
-  return (
-    <View style={styles.container}>
-        <View style={styles.inputView} >
-          <TextInput  
-            style={styles.inputText}
-            placeholder="Patient Id..." 
-            placeholderTextColor="#003f5c"
-            onChangeText={id => setText(id)} />
-        </View>
-          
-        <View style={styles.inputView} >
-              <TextInput  
-                secureTextEntry
-                style={styles.inputText}
-                placeholder="Patient Password..." 
-                placeholderTextColor="#003f5c"
-                onChangeText={id => setText1(id)}/>
-        </View>
-        <TouchableOpacity>
-            <Text style={styles.forgot}>Forgot Password?</Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.loginBtn}>
-            <Text style={styles.loginText}>LOGIN</Text>
-          </TouchableOpacity>
-      </View>
-  );
-}
-
-function HLoginScreen ({navigation})  {
-  const [id, setText2] = useState('');
-  const [password, setText3] = useState('');
-  return (
-    <View style={styles.container}>
-        <View style={styles.inputView} >
-          <TextInput  
-            style={styles.inputText}
-            placeholder="Hospital Id..." 
-            placeholderTextColor="#003f5c"
-            onChangeText={id => setText2(id)} />
-        </View>
-          
-        <View style={styles.inputView} >
-              <TextInput  
-                secureTextEntry
-                style={styles.inputText}
-                placeholder="Hospital Password..." 
-                placeholderTextColor="#003f5c"
-                onChangeText={id => setText3(id)}/>
-        </View>
-        <TouchableOpacity>
-            <Text style={styles.forgot}>Forgot Password?</Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.loginBtn}>
-            <Text style={styles.loginText}>LOGIN</Text>
-          </TouchableOpacity>
-          
-      </View>
-  );
-}
-
 function HospitalScreen ({ navigation, route }) {
   return <Text>Welcome to {route.params.name} Hospital!</Text>;
 }
@@ -106,8 +45,6 @@ function LogoTitle() {
     />
   );
 }
-
-
 
 
 const Stack = createStackNavigator();
@@ -171,36 +108,6 @@ const styles = StyleSheet.create({
     fontFamily: 'Monospace',
     fontSize: 16,
   },
-  inputView:{
-    width:"80%",
-    backgroundColor:"#465881",
-    borderRadius:25,
-    height:50,
-    marginBottom:20,
-    justifyContent:"center",
-    padding:20
-  },
-  inputText:{
-    height:50,
-    color:"white"
-  },
-  forgot:{
-    color:"white",
-    fontSize:11
-  },
-  loginBtn:{
-    width:"80%",
-    backgroundColor:"#fb5b5a",
-    borderRadius:25,
-    height:50,
-    alignItems:"center",
-    justifyContent:"center",
-    marginTop:40,
-    marginBottom:10
-  },
-  loginText:{
-    color:"white"
-  }
 });
 
 export default App;
