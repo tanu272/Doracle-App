@@ -7,6 +7,7 @@ import { Card } from 'react-native-elements';
 
 
 
+
 function HomeScreen ({ navigation }) {
   return (
     <View style={styles.container}>
@@ -27,10 +28,11 @@ function HomeScreen ({ navigation }) {
         }
       />
       <Text>{"\n"}</Text>
+      
       <Button
-        text="Hospital 1st page"
+        text="Update"
         onPress={() =>
-          navigation.navigate('Hospital', { name: 'Total Patient Details' })
+          navigation.navigate('Update', { name: 'Update of Patient' })
         }
       />
     </View>
@@ -106,6 +108,9 @@ function HospitalScreen ({ navigation, route }) {
 
     
     <ScrollView style={styles.scrollView}>
+    <Text style={{backgroundColor: '#003f5c',}}>{"\n"}</Text>
+
+    <Text style={{backgroundColor: '#003f5c',color:'lightblue', fontSize:30, paddingLeft:70}}>List of all patients.</Text>
     <Text style={{backgroundColor: '#003f5c',}}>{"\n"}</Text>
     
     
@@ -226,6 +231,70 @@ function HospitalScreen ({ navigation, route }) {
 
 }
 
+
+function Update ({ navigation, route }) {
+
+  const [id, setText2] = useState('');
+    const [password, setText3] = useState('');
+    const [value, onChangeText] = React.useState('');
+    const [time, setText1] = React.useState('');
+    
+
+  return (
+
+    
+    <View style={styles.containerhos}>
+      
+      <Text style={{backgroundColor: '#003f5c',}}>{"\n"}</Text>
+      <Text style={{backgroundColor: '#003f5c',}}>{"\n"}</Text>
+      <Text style={{color:'white', fontSize:20}}>Fill up new patient details.</Text>
+      <Text style={{backgroundColor: '#003f5c',}}>{"\n"}</Text>
+      <Text style={{backgroundColor: '#003f5c',}}>{"\n"}</Text>
+      <Text style={{backgroundColor: '#003f5c',}}>{"\n"}</Text>
+
+      <View style={styles.inputViewNew} >
+          <TextInput  
+            style={styles.inputTextNew}
+            placeholder=" Patient Name Here..." 
+            placeholderTextColor="#003f5c"
+            onChangeText={id => setText2(id)} />
+        </View>
+          
+        
+        <View style={styles.inputViewNew} >
+              <TextInput  
+                numeric
+                style={styles.inputTextNew}
+                placeholder="Id Number..." 
+                placeholderTextColor="#003f5c"
+                onChangeText={id => setText1(id)}/>
+        </View>
+        <View style={styles.inputViewNew} >
+              <TextInput  
+                numeric
+                style={styles.inputTextNew}
+                placeholder="Time of update..." 
+                placeholderTextColor="#003f5c"
+                onChangeText={time => setText3(time)}/>
+        </View>
+        <TextInput
+        multiline
+        placeholder="Patient Condition..." 
+        placeholderTextColor="#003f5c"
+      style={styles.inputViewNewfortext}
+      onChangeText={text => onChangeText(text)}
+      value={value}
+    />
+        
+          <TouchableOpacity style={styles.loginBtn}>
+            <Text style={styles.loginText}>Submit</Text>
+          </TouchableOpacity>
+
+
+    </View>
+  );
+}
+
 function PatientScreen ({ navigation, route }) {
   return <Text>Hello again Patient {route.params.name}!</Text>;
 }
@@ -285,6 +354,11 @@ class App extends React.Component {
         component={PatientScreen} 
         options={({ route }) => ({ title: route.params.name })}
         />
+        <Stack.Screen 
+        name="Update" 
+        component={Update} 
+        options={({ route }) => ({ title: route.params.name })}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
@@ -330,9 +404,34 @@ const styles = StyleSheet.create({
     justifyContent:"center",
     padding:20
   },
+  inputViewNew:
+  {
+    width:"80%",
+    backgroundColor:"lightblue",
+    borderRadius:15,
+    height:50,
+    marginBottom:20,
+    justifyContent:"center",
+    padding:20
+  },
+
+  inputViewNewfortext:{
+    width:"80%",
+    backgroundColor:"lightblue",
+    borderRadius:15,
+    height:120,
+    marginBottom:20,
+    justifyContent:"center",
+    padding:20
+  },
   inputText:{
     height:50,
     color:"white"
+  },
+  
+  inputTextNew:{
+    height:50,
+    color:"black"
   },
   forgot:{
     color:"white",
