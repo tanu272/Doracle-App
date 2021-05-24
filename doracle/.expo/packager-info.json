@@ -1,0 +1,10 @@
+{
+  "devToolsPort": 19002,
+  "expoServerPort": 19000,
+  "packagerPort": 19000,
+  "expoServerNgrokUrl": "https://ns-9ei.anonymous.doracle.exp.direct",
+  "packagerNgrokUrl": "https://packager.ns-9ei.anonymous.doracle.exp.direct",
+  "ngrokPid": 47372,
+  "webpackServerPort": null,
+  "packagerPid": null
+}

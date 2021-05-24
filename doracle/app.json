@@ -1,0 +1,12 @@
+{
+  "name": "doracle",
+  "displayName": "doracle",
+  "expo": {
+    "name": "doracle",
+    "slug": "doracle",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
