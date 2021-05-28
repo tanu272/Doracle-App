@@ -4,6 +4,10 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { Button } from './Button';
 import { Card } from 'react-native-elements';
+import { DataTable } from 'react-native-paper';
+
+
+
 
 
 
@@ -32,7 +36,13 @@ function HomeScreen ({ navigation }) {
       <Button
         text="Update"
         onPress={() =>
-          navigation.navigate('Update', { name: 'Update of Patient' })
+          navigation.navigate('Update', { name: 'New Patient' })
+        }
+      />
+       <Button
+        text="Update"
+        onPress={() =>
+          navigation.navigate('Requirementoldpatient', { name: 'Patient Requirement' })
         }
       />
     </View>
@@ -238,6 +248,7 @@ function Update ({ navigation, route }) {
     const [password, setText3] = useState('');
     const [value, onChangeText] = React.useState('');
     const [time, setText1] = React.useState('');
+    const [email, setText4] = React.useState('');
     
 
   return (
@@ -255,7 +266,7 @@ function Update ({ navigation, route }) {
       <View style={styles.inputViewNew} >
           <TextInput  
             style={styles.inputTextNew}
-            placeholder=" Patient Name Here..." 
+            placeholder="First Name..." 
             placeholderTextColor="#003f5c"
             onChangeText={id => setText2(id)} />
         </View>
@@ -265,7 +276,7 @@ function Update ({ navigation, route }) {
               <TextInput  
                 numeric
                 style={styles.inputTextNew}
-                placeholder="Id Number..." 
+                placeholder=" Last Name..." 
                 placeholderTextColor="#003f5c"
                 onChangeText={id => setText1(id)}/>
         </View>
@@ -273,18 +284,20 @@ function Update ({ navigation, route }) {
               <TextInput  
                 numeric
                 style={styles.inputTextNew}
-                placeholder="Time of update..." 
+                placeholder="Contact Number..." 
                 placeholderTextColor="#003f5c"
                 onChangeText={time => setText3(time)}/>
         </View>
-        <TextInput
-        multiline
-        placeholder="Patient Condition..." 
-        placeholderTextColor="#003f5c"
-      style={styles.inputViewNewfortext}
-      onChangeText={text => onChangeText(text)}
-      value={value}
-    />
+
+        <View style={styles.inputViewNew} >
+              <TextInput  
+                numeric
+                style={styles.inputTextNew}
+                placeholder="Email..." 
+                placeholderTextColor="#003f5c"
+                onChangeText={email => setText4(email)}/>
+        </View>
+        
         
           <TouchableOpacity style={styles.loginBtn}>
             <Text style={styles.loginText}>Submit</Text>
@@ -294,6 +307,193 @@ function Update ({ navigation, route }) {
     </View>
   );
 }
+
+
+
+
+
+
+function Updateoldpatient ({ navigation, route }) {
+
+  const [condition, onChangeText] = React.useState('');
+    
+    
+
+  return (
+<ScrollView style={styles.scrollView}>
+    
+    <View style={styles.containerhos}>
+      
+      <Text style={{backgroundColor: '#003f5c',}}>{"\n"}</Text>
+      <Text style={{backgroundColor: '#003f5c',}}>{"\n"}</Text>
+      <Text style={{color:'white', fontSize:30}}>Patient Details</Text>
+      <Text style={{backgroundColor: '#003f5c',}}>{"\n"}</Text>
+      <Text style={{backgroundColor: '#003f5c',}}>{"\n"}</Text>
+      <Text style={{color:'white', fontSize:20}}>Name - Tanushree Bhattacharya</Text>
+      <Text style={{color:'white', fontSize:20}}>Contact - 9434559724 </Text>
+      <Text style={{color:'white', fontSize:20}}>Patient id - INDFueqP8</Text>
+      <Text style={{color:'white', fontSize:20}}>Email - tanub922@gmail.com</Text>
+      <Text style={{backgroundColor: '#003f5c',}}>{"\n"}</Text>
+      <Text style={{backgroundColor: '#003f5c',}}>{"\n"}</Text>
+
+
+      <Text style={{color:'white', fontSize:40}}>Patient Log</Text>
+      <Text style={{backgroundColor: '#003f5c',}}>{"\n"}</Text>
+      <Text style={{backgroundColor: '#003f5c',}}>{"\n"}</Text>
+
+
+      <DataTable style={{backgroundColor: 'lightblue',}}>
+    <DataTable.Header>
+      <DataTable.Title>Condition</DataTable.Title>
+      <DataTable.Title numeric >
+        Date
+      </DataTable.Title>
+      <DataTable.Title numeric>Time</DataTable.Title>
+    </DataTable.Header>
+
+    <DataTable.Row>
+      <DataTable.Cell>Better than before</DataTable.Cell>
+      <DataTable.Cell numeric>15.07.19</DataTable.Cell>
+      <DataTable.Cell numeric>6.00</DataTable.Cell>
+    </DataTable.Row>
+
+    <DataTable.Row>
+      <DataTable.Cell>Better than before</DataTable.Cell>
+      <DataTable.Cell numeric>23.07.19</DataTable.Cell>
+      <DataTable.Cell numeric>8.00</DataTable.Cell>
+    </DataTable.Row>
+  </DataTable>
+
+
+
+  <Text style={{backgroundColor: '#003f5c',}}>{"\n"}</Text>
+      <Text style={{backgroundColor: '#003f5c',}}>{"\n"}</Text>
+
+      <Text style={{color:'white', fontSize:40}}>Add Patient Status</Text>
+      <Text style={{backgroundColor: '#003f5c',}}>{"\n"}</Text>
+      
+        <TextInput
+        multiline
+        placeholder="Patient's Conditon..." 
+        placeholderTextColor="#003f5c"
+      style={styles.inputViewNewfortext}
+      onChangeText={text => onChangeText(text)}
+      value={condition}
+    />
+        
+          <TouchableOpacity style={styles.loginBtn}>
+            <Text style={styles.loginText}>Submit</Text>
+          </TouchableOpacity>
+
+
+    </View>
+
+    </ScrollView>
+  );
+}
+
+
+
+
+
+
+
+function Requirementoldpatient ({ navigation, route }) {
+
+  const [condition, onChangeText] = React.useState('');
+  const [conditioninfo, onChangeText2] = React.useState('');
+    
+    
+
+  return (
+<ScrollView style={styles.scrollView}>
+    
+    <View style={styles.containerhos}>
+      
+      <Text style={{backgroundColor: '#003f5c',}}>{"\n"}</Text>
+      <Text style={{backgroundColor: '#003f5c',}}>{"\n"}</Text>
+      <Text style={{color:'white', fontSize:30}}>Patient Details</Text>
+      <Text style={{backgroundColor: '#003f5c',}}>{"\n"}</Text>
+      <Text style={{backgroundColor: '#003f5c',}}>{"\n"}</Text>
+      <Text style={{color:'white', fontSize:20}}>Name - Tanushree Bhattacharya</Text>
+      <Text style={{color:'white', fontSize:20}}>Contact - 9434559724 </Text>
+      <Text style={{color:'white', fontSize:20}}>Patient id - INDFueqP8</Text>
+      <Text style={{color:'white', fontSize:20}}>Email - tanub922@gmail.com</Text>
+      <Text style={{backgroundColor: '#003f5c',}}>{"\n"}</Text>
+      <Text style={{backgroundColor: '#003f5c',}}>{"\n"}</Text>
+
+
+      <Text style={{color:'white', fontSize:40}}>Requirement Log</Text>
+      <Text style={{backgroundColor: '#003f5c',}}>{"\n"}</Text>
+      <Text style={{backgroundColor: '#003f5c',}}>{"\n"}</Text>
+
+
+      <DataTable style={{backgroundColor: 'lightblue',}}>
+    <DataTable.Header>
+      <DataTable.Title>Requirement</DataTable.Title>
+      <DataTable.Title>info</DataTable.Title>
+      <DataTable.Title numeric >
+        Date
+      </DataTable.Title>
+      <DataTable.Title numeric>Time</DataTable.Title>
+      
+    </DataTable.Header>
+
+    <DataTable.Row>
+      <DataTable.Cell>Paracetamol</DataTable.Cell>
+      <DataTable.Cell>Paracetamol</DataTable.Cell>
+      <DataTable.Cell numeric>15.07.19</DataTable.Cell>
+      <DataTable.Cell numeric>6.00</DataTable.Cell>
+      
+    </DataTable.Row>
+
+    <DataTable.Row>
+      <DataTable.Cell>Paracetamol</DataTable.Cell>
+      <DataTable.Cell>Paracetamol</DataTable.Cell>
+      <DataTable.Cell numeric>23.07.19</DataTable.Cell>
+      <DataTable.Cell numeric>8.00</DataTable.Cell>
+      
+    </DataTable.Row>
+  </DataTable>
+
+
+
+  <Text style={{backgroundColor: '#003f5c',}}>{"\n"}</Text>
+      <Text style={{backgroundColor: '#003f5c',}}>{"\n"}</Text>
+
+      <Text style={{color:'white', fontSize:20}}>Add Requirement Status</Text>
+      <Text style={{backgroundColor: '#003f5c',}}>{"\n"}</Text>
+      
+        <TextInput
+        multiline
+        placeholder="Patient's Requirement..." 
+        placeholderTextColor="#003f5c"
+      style={styles.inputViewNewfortext}
+      onChangeText={text => onChangeText(text)}
+      value={condition}
+    />
+    <TextInput
+        multiline
+        placeholder="Patient's Info..." 
+        placeholderTextColor="#003f5c"
+      style={styles.inputViewNewfortext}
+      onChangeText={text => onChangeText2(text)}
+      value={conditioninfo}
+    />
+        
+          <TouchableOpacity style={styles.loginBtn}>
+            <Text style={styles.loginText}>Submit</Text>
+          </TouchableOpacity>
+
+
+    </View>
+
+    </ScrollView>
+  );
+}
+
+
+
 
 function PatientScreen ({ navigation, route }) {
   return <Text>Hello again Patient {route.params.name}!</Text>;
@@ -311,6 +511,12 @@ function LogoTitle() {
 
 
 
+
+
+
+
+
+
 const Stack = createStackNavigator();
 
 class App extends React.Component {
@@ -320,7 +526,12 @@ class App extends React.Component {
   }
   render() {
   return (
+
+    
     <NavigationContainer>
+      
+     
+    
       <Stack.Navigator initialRouteName="Home"
       screenOptions={{
         headerStyle: {
@@ -357,6 +568,16 @@ class App extends React.Component {
         <Stack.Screen 
         name="Update" 
         component={Update} 
+        options={({ route }) => ({ title: route.params.name })}
+        />
+        <Stack.Screen 
+        name="Updateoldpatient" 
+        component={Updateoldpatient} 
+        options={({ route }) => ({ title: route.params.name })}
+        />
+        <Stack.Screen 
+        name="Requirementoldpatient" 
+        component={Requirementoldpatient} 
         options={({ route }) => ({ title: route.params.name })}
         />
       </Stack.Navigator>
