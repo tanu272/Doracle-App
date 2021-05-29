@@ -35,9 +35,9 @@ const styles = StyleSheet.create({
   FacebookStyle: {
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: '#003f5c',
+    backgroundColor: '#ddffb0',
     borderWidth: 0.5,
-    borderColor: '#003f5c',
+    borderColor: '#ddffb0',
     height: 40,
     borderRadius: 5,
     margin: 5,
@@ -62,7 +62,15 @@ const styles = StyleSheet.create({
 function FlatListBasics({ navigation }) {
   return (
     <View style={styles.container}>
-      
+      <TouchableOpacity style={styles.FacebookStyle} 
+      onPress = {() => navigation.openDrawer()}
+      activeOpacity={0.1}>
+ 
+         <Image 
+          source={require('../assets/hmb.png')} 
+          style={styles.ImageIconStyle} 
+          />
+       </TouchableOpacity>
       <Text style={styles.text}>Pharmacy Requirements{"\n\n"}</Text>
       <SectionList
         sections={[
