@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { View, Text, Button, StyleSheet, Image, ProgressBarAndroid, TouchableOpacity, ScrollView} from 'react-native';
-import { NavigationContainer, DrawerActions } from '@react-navigation/native';
 import { Table, TableWrapper, Row, Rows, Col, Cols, Cell } from 'react-native-table-component';
 
 
@@ -37,7 +36,15 @@ class Home extends React.Component {
     
     <View style={styles.MainContainer}>
       <ScrollView contentContainerStyle={styles.contentContainer}>
-
+      <TouchableOpacity style={styles.FacebookStyle} 
+      onPress = {() => navigation.openDrawer()}
+      activeOpacity={0.1}>
+ 
+         <Image 
+          source={require('../assets/hmb.png')} 
+          style={styles.ImageIconStyle} 
+          />
+       </TouchableOpacity>
        <View style={{paddingLeft: 95, paddingTop: 20}}>
         <Image
         style={{ width: 150, height: 150 }}
@@ -122,9 +129,9 @@ const styles = StyleSheet.create({
 FacebookStyle: {
   flexDirection: 'row',
   alignItems: 'center',
-  backgroundColor: '#003f5c',
+  backgroundColor: '#ddffb0',
   borderWidth: .5,
-  borderColor: '#003f5c',
+  borderColor: '#ddffb0',
   height: 40,
   borderRadius: 5 ,
   margin: 5,
