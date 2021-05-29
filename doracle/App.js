@@ -36,13 +36,13 @@ function HomeScreen ({ navigation }) {
       <Button
         text="Update"
         onPress={() =>
-          navigation.navigate('Update', { name: 'New Patient' })
+          navigation.navigate('HospitalScreen', { name: 'New Patient' })
         }
       />
        <Button
         text="Update"
         onPress={() =>
-          navigation.navigate('Requirementoldpatient', { name: 'Patient Requirement' })
+          navigation.navigate('Updateoldpatient', { name: 'Patient Requirement' })
         }
       />
     </View>
@@ -118,124 +118,148 @@ function HospitalScreen ({ navigation, route }) {
 
     
     <ScrollView style={styles.scrollView}>
-    <Text style={{backgroundColor: '#003f5c',}}>{"\n"}</Text>
 
-    <Text style={{backgroundColor: '#003f5c',color:'lightblue', fontSize:30, paddingLeft:70}}>List of all patients.</Text>
+      
+    <Text style={{backgroundColor: '#003f5c',}}>{"\n"}</Text>
+    <Text style={{backgroundColor: '#003f5c',}}>{"\n"}</Text>
+    <Text style={{backgroundColor: '#003f5c',color:'white', fontSize:30, paddingLeft:70}}>List of all patients.</Text>
+    <Text style={{backgroundColor: '#003f5c',}}>{"\n"}</Text>
     <Text style={{backgroundColor: '#003f5c',}}>{"\n"}</Text>
     
-    
-    <View style={styles.containerhos}>
-    <Card containerStyle={styles.cardtoday}>
-      <Text>Name : Ankita Mandal</Text>
-      <Text >
-      Age : 20
-    </Text>
-    <Text style={{marginBottom: 10}}>
-      Condition : Better than before.
-    </Text>
-    <Text style={{marginBottom: 10}}>
-      Emergency Contact : 9851065457
-    </Text>
-      </Card>
-      <Card containerStyle={styles.cardtoday}>
-      <Text>Name : Ankita Mandal</Text>
-      <Text >
-      Age : 20
-    </Text>
-    <Text style={{marginBottom: 10}}>
-      Condition : Better than before.
-    </Text>
-    <Text style={{marginBottom: 10}}>
-      Emergency Contact : 9851065457
-    </Text>
-      </Card>
-      <Card containerStyle={styles.cardtoday}>
-      <Text>Name : Ankita Mandal</Text>
-      <Text >
-      Age : 20
-    </Text>
-    <Text style={{marginBottom: 10}}>
-      Condition : Better than before.
-    </Text>
-    <Text style={{marginBottom: 10}}>
-      Emergency Contact : 9851065457
-    </Text>
-      </Card>
-      <Card containerStyle={styles.cardtoday}>
-      <Text>Name : Ankita Mandal</Text>
-      <Text >
-      Age : 20
-    </Text>
-    <Text style={{marginBottom: 10}}>
-      Condition : Better than before.
-    </Text>
-    <Text style={{marginBottom: 10}}>
-      Emergency Contact : 9851065457
-    </Text>
-      </Card>
-      <Card containerStyle={styles.cardtoday}>
-      <Text>Name : Ankita Mandal</Text>
-      <Text >
-      Age : 20
-    </Text>
-    <Text style={{marginBottom: 10}}>
-      Condition : Better than before.
-    </Text>
-    <Text style={{marginBottom: 10}}>
-      Emergency Contact : 9851065457
-    </Text>
-      </Card>
-      <Card containerStyle={styles.cardtoday}>
-      <Text>Name : Ankita Mandal</Text>
-      <Text >
-      Age : 20
-    </Text>
-    <Text style={{marginBottom: 10}}>
-      Condition : Better than before.
-    </Text>
-    <Text style={{marginBottom: 10}}>
-      Emergency Contact : 9851065457
-    </Text>
-      </Card>
-      <Card containerStyle={styles.cardtoday}>
-      <Text>Name : Ankita Mandal</Text>
-      <Text >
-      Age : 20
-    </Text>
-    <Text style={{marginBottom: 10}}>
-      Condition : Better than before.
-    </Text>
-    <Text style={{marginBottom: 10}}>
-      Emergency Contact : 9851065457
-    </Text>
-      </Card>
-      <Card containerStyle={styles.cardtoday}>
-      <Text>Name : Ankita Mandal</Text>
-      <Text >
-      Age : 20
-    </Text>
-    <Text style={{marginBottom: 10}}>
-      Condition : Better than before.
-    </Text>
-    <Text style={{marginBottom: 10}}>
-      Emergency Contact : 9851065457
-    </Text>
-      </Card>
-      <Card containerStyle={styles.cardtoday}>
-      <Text>Name : Ankita Mandal</Text>
-      <Text >
-      Age : 20
-    </Text>
-    <Text style={{marginBottom: 10}}>
-      Condition : Better than before.
-    </Text>
-    <Text style={{marginBottom: 10}}>
-      Emergency Contact : 9851065457
-    </Text>
-      </Card>
 
-        
-    </View>
+    
+
+    <DataTable style={{backgroundColor: 'lightblue',}}>
+    <DataTable.Header>
+      <DataTable.Title>Name</DataTable.Title>
+      <DataTable.Title  >
+        Patient id
+      </DataTable.Title>
+      <DataTable.Title>Status</DataTable.Title>
+    </DataTable.Header>
+
+    <DataTable.Row>
+      <DataTable.Cell>Ankita Mandal</DataTable.Cell>
+      <DataTable.Cell >INDfdbjv</DataTable.Cell>
+      <DataTable.Cell >Better than before</DataTable.Cell>
+    </DataTable.Row>
+
+    <DataTable.Row>
+      <DataTable.Cell>Ankita Mandal</DataTable.Cell>
+      <DataTable.Cell >INDjfnje</DataTable.Cell>
+      <DataTable.Cell>Better then before</DataTable.Cell>
+    </DataTable.Row>
+    <DataTable.Row>
+      <DataTable.Cell>Ankita Mandal</DataTable.Cell>
+      <DataTable.Cell >INDfdbjv</DataTable.Cell>
+      <DataTable.Cell >Better than before</DataTable.Cell>
+    </DataTable.Row>
+
+    <DataTable.Row>
+      <DataTable.Cell>Ankita Mandal</DataTable.Cell>
+      <DataTable.Cell >INDjfnje</DataTable.Cell>
+      <DataTable.Cell>Better then before</DataTable.Cell>
+    </DataTable.Row>
+    <DataTable.Row>
+      <DataTable.Cell>Ankita Mandal</DataTable.Cell>
+      <DataTable.Cell >INDfdbjv</DataTable.Cell>
+      <DataTable.Cell >Better than before</DataTable.Cell>
+    </DataTable.Row>
+
+    <DataTable.Row>
+      <DataTable.Cell>Ankita Mandal</DataTable.Cell>
+      <DataTable.Cell >INDjfnje</DataTable.Cell>
+      <DataTable.Cell>Better then before</DataTable.Cell>
+    </DataTable.Row>
+    <DataTable.Row>
+      <DataTable.Cell>Ankita Mandal</DataTable.Cell>
+      <DataTable.Cell >INDfdbjv</DataTable.Cell>
+      <DataTable.Cell >Better than before</DataTable.Cell>
+    </DataTable.Row>
+
+    <DataTable.Row>
+      <DataTable.Cell>Ankita Mandal</DataTable.Cell>
+      <DataTable.Cell >INDjfnje</DataTable.Cell>
+      <DataTable.Cell>Better then before</DataTable.Cell>
+    </DataTable.Row>
+    <DataTable.Row>
+      <DataTable.Cell>Ankita Mandal</DataTable.Cell>
+      <DataTable.Cell >INDfdbjv</DataTable.Cell>
+      <DataTable.Cell >Better than before</DataTable.Cell>
+    </DataTable.Row>
+
+    <DataTable.Row>
+      <DataTable.Cell>Ankita Mandal</DataTable.Cell>
+      <DataTable.Cell >INDjfnje</DataTable.Cell>
+      <DataTable.Cell>Better then before</DataTable.Cell>
+    </DataTable.Row>
+    <DataTable.Row>
+      <DataTable.Cell>Ankita Mandal</DataTable.Cell>
+      <DataTable.Cell >INDfdbjv</DataTable.Cell>
+      <DataTable.Cell >Better than before</DataTable.Cell>
+    </DataTable.Row>
+
+    <DataTable.Row>
+      <DataTable.Cell>Ankita Mandal</DataTable.Cell>
+      <DataTable.Cell >INDjfnje</DataTable.Cell>
+      <DataTable.Cell>Better then before</DataTable.Cell>
+    </DataTable.Row>
+    <DataTable.Row>
+      <DataTable.Cell>Ankita Mandal</DataTable.Cell>
+      <DataTable.Cell >INDfdbjv</DataTable.Cell>
+      <DataTable.Cell >Better than before</DataTable.Cell>
+    </DataTable.Row>
+
+    <DataTable.Row>
+      <DataTable.Cell>Ankita Mandal</DataTable.Cell>
+      <DataTable.Cell >INDjfnje</DataTable.Cell>
+      <DataTable.Cell>Better then before</DataTable.Cell>
+    </DataTable.Row>
+    <DataTable.Row>
+      <DataTable.Cell>Ankita Mandal</DataTable.Cell>
+      <DataTable.Cell >INDfdbjv</DataTable.Cell>
+      <DataTable.Cell >Better than before</DataTable.Cell>
+    </DataTable.Row>
+
+    <DataTable.Row>
+      <DataTable.Cell>Ankita Mandal</DataTable.Cell>
+      <DataTable.Cell >INDjfnje</DataTable.Cell>
+      <DataTable.Cell>Better then before</DataTable.Cell>
+    </DataTable.Row>
+    <DataTable.Row>
+      <DataTable.Cell>Ankita Mandal</DataTable.Cell>
+      <DataTable.Cell >INDfdbjv</DataTable.Cell>
+      <DataTable.Cell >Better than before</DataTable.Cell>
+    </DataTable.Row>
+
+    <DataTable.Row>
+      <DataTable.Cell>Ankita Mandal</DataTable.Cell>
+      <DataTable.Cell >INDjfnje</DataTable.Cell>
+      <DataTable.Cell>Better then before</DataTable.Cell>
+    </DataTable.Row>
+    <DataTable.Row>
+      <DataTable.Cell>Ankita Mandal</DataTable.Cell>
+      <DataTable.Cell >INDfdbjv</DataTable.Cell>
+      <DataTable.Cell >Better than before</DataTable.Cell>
+    </DataTable.Row>
+
+    <DataTable.Row>
+      <DataTable.Cell>Ankita Mandal</DataTable.Cell>
+      <DataTable.Cell >INDjfnje</DataTable.Cell>
+      <DataTable.Cell>Better then before</DataTable.Cell>
+    </DataTable.Row>
+    <DataTable.Row>
+      <DataTable.Cell>Ankita Mandal</DataTable.Cell>
+      <DataTable.Cell >INDfdbjv</DataTable.Cell>
+      <DataTable.Cell >Better than before</DataTable.Cell>
+    </DataTable.Row>
+
+    <DataTable.Row>
+      <DataTable.Cell>Ankita Mandal</DataTable.Cell>
+      <DataTable.Cell >INDjfnje</DataTable.Cell>
+      <DataTable.Cell>Better then before</DataTable.Cell>
+    </DataTable.Row>
+  </DataTable>
     </ScrollView>
   );
 
@@ -554,7 +578,7 @@ class App extends React.Component {
         component={HLoginScreen}
         options={({ route }) => ({ title: route.params.name })}
         />
-        <Stack.Screen name="Hospital" 
+        <Stack.Screen name="HospitalScreen" 
         component={HospitalScreen} 
         options={
           ({ route }) => ({ title: route.params.name })
