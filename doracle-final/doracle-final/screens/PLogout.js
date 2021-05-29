@@ -1,6 +1,5 @@
 import React from 'react';
 import {
-  SectionList,
   StyleSheet,
   Text,
   View,
@@ -12,9 +11,20 @@ import {
 function Logout({navigation})
 {
   return (
-    <View style= {styles.MainContainer}>
-      
-        <Text style={{color:"#194002", fontSize:25, alignContent:'center', paddingTop: 200}}>
+    <View style= {{flex: 1}}>
+       <View style={styles.MainContainer}>
+        <TouchableOpacity style={styles.FacebookStyle} 
+      onPress = {() => navigation.openDrawer()}
+      activeOpacity={0.1}>
+ 
+         <Image 
+          source={require('../assets/hmb.png')} 
+          style={styles.ImageIconStyle} 
+          />
+       </TouchableOpacity>
+       </View>
+       <View style={styles.MainContainer1}>
+        <Text style={{color:"#194002", fontSize:25, alignContent:'center'}}>
         Are you sure you wanna logout?
         <Text>{"\n"}</Text>
         </Text>
@@ -27,7 +37,10 @@ function Logout({navigation})
         <Text>{"\n"}</Text>
         <Button
         title ="NO"
+        onPress={() =>
+          navigation.navigate('Home')}
         />
+        </View>
      </View>
   );
 }
@@ -35,19 +48,25 @@ function Logout({navigation})
 const styles = StyleSheet.create({
 
   MainContainer: {
-   flex:1, 
-   paddingTop: 40, 
-   paddingLeft: 10, 
-   paddingRight: 10, 
-   backgroundColor: '#ddffb0',
+    paddingTop: 40, 
+    paddingLeft: 10, 
+    paddingRight: 10, 
+    backgroundColor: '#ddffb0',
  },
+
+  MainContainer1: {
+    flex: 1,
+    paddingLeft: 10, 
+    paddingRight: 10, 
+    paddingTop: 150,
+    backgroundColor: '#ddffb0',
+  },
 
   FacebookStyle: {
   flexDirection: 'row',
-  alignItems: 'center',
-  backgroundColor: '#003f5c',
+  backgroundColor: '#ddffb0',
   borderWidth: .5,
-  borderColor: '#003f5c',
+  borderColor: '#ddffb0',
   height: 40,
   borderRadius: 5 ,
   margin: 5,
@@ -60,7 +79,6 @@ ImageIconStyle: {
    height: 25,
    width: 25,
    resizeMode : 'stretch',
- 
 },
 });
 
