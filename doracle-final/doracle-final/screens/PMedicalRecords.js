@@ -9,7 +9,15 @@ function Notifications ({navigation}) {
 
     <View style={styles.MainContainer}>
       <ScrollView contentContainerStyle={styles.contentContainer}>
-     
+      <TouchableOpacity style={styles.FacebookStyle} 
+      onPress = {() => navigation.openDrawer()}
+      activeOpacity={0.1}>
+ 
+         <Image 
+          source={require('../assets/hmb.png')} 
+          style={styles.ImageIconStyle} 
+          />
+       </TouchableOpacity>
       <Text style={styles.text}>Patient Medical Records</Text>
       <View>
       <Text style={styles.subhead}>
@@ -44,9 +52,7 @@ function Notifications ({navigation}) {
         Mr. Name1 Surname1:{"  "}+91-XXXXXXXXXX {"\n"}
         {"                                        "}+91-XXXXXXXXXX (Alternative) {"\n"}
       </Text>
-      <Text style={{color: '#defeff',
-    fontSize: 13,
-    fontWeight: 'bold',}}>
+      <Text style={styles.body1}>
         Address:{"  "}44/99 ABC Avenue {"\n"}
         {"                  "}Gopalpur{"\n"}
         {"                  "}Uttar Pradesh{"\n"}
@@ -109,11 +115,11 @@ const styles = StyleSheet.create({
    paddingTop: 40, 
    paddingLeft: 10, 
    paddingRight: 10, 
-   backgroundColor: '#003f5c',
+   backgroundColor: '#ddffb0',
  },
 
   text: {
-    color: '#f0b30c',
+    color: '#194002',
     fontWeight: 'bold',
     fontSize: 30,
     textDecorationLine: 'underline'
@@ -123,11 +129,11 @@ const styles = StyleSheet.create({
     fontSize: 15,
   },
   body: {
-    color: '#defeff',
+    color: '#194002',
     fontSize: 11,
   },
   body1: {
-    color: '#defeff',
+    color: '#194002',
     fontSize: 13,
     fontWeight: 'bold',
   },
@@ -161,9 +167,9 @@ const styles = StyleSheet.create({
   FacebookStyle: {
   flexDirection: 'row',
   alignItems: 'center',
-  backgroundColor: '#003f5c',
+  backgroundColor: '#ddffb0',
   borderWidth: .5,
-  borderColor: '#003f5c',
+  borderColor: '#ddffb0',
   height: 40,
   borderRadius: 5 ,
   margin: 5,
