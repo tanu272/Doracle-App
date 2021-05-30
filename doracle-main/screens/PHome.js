@@ -1,14 +1,33 @@
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import React, { useState } from 'react';
 import { View, Text, Button, StyleSheet, Image, ProgressBarAndroid, TouchableOpacity, ScrollView} from 'react-native';
-
+import jwt_decode from 'jwt-decode'
 
 class Home extends React.Component {
- 
+  constructor(props) {
+    super(props)
+    this.state = {id: "", name: "", contact: "", patientid: "", email: ""}
+   
+  }
+
+
+  componentDidMount(){
+
+      fetch(`https://doracle-backend.herokuapp.com/hospital/show/IND2Sgy59`)
+      .then((response) => response.json())
+      .then((data2) => { 
+          const pname = data2.firstname + ' ' + data2.lastname;
+          this.setState({name: pname, contact: data2.contact, patientid: data2.patientID, email: data2.email});
+      });
+    }
+   
+
+
   render() {
- 
-
+    
   const { navigation } = this.props;
-
+  // const { dame } = this.props.route.params
+  
   return (
     
     <View style={styles.MainContainer}>
@@ -22,15 +41,20 @@ class Home extends React.Component {
           style={styles.ImageIconStyle} 
           />
        </TouchableOpacity>
-       <View style={{paddingLeft: 95, paddingTop: 20}}>
+      
+       <View style={{paddingLeft: 95, paddingTop: 18, marginLeft: 18 }}>
+         
         <Image
         style={{ width: 150, height: 150 }}
         source={require('../assets/m.png')}
         />
        </View>
-       <View style={{paddingLeft:150}}>
-        <Text style ={styles.TextStyle}>Mr. XYZ {"\n"}
-        </Text>
+       <View style={{paddingLeft: 140}}>
+       <Text style ={styles.TextStyle}>Name - {"\n"}</Text>
+        <Text style ={styles.TextStyle}>Name - {this.state.name}{"\n"}</Text>
+        <Text style ={styles.TextStyle}>Patient ID - {this.state.patientid} {"\n"}</Text>
+        <Text style ={styles.TextStyle}>Email - {this.state.email} {"\n"}</Text>
+        <Text style ={styles.TextStyle}>Contact - {this.state.contact} {"\n"}</Text>
         </View>
 
         <View style={{justifyContent :"space-evenly", paddingLeft: 65, marginTop: 10}}><Text style ={{color: "#194002", fontSize: 20,}}>Progress of the Patient</Text></View>
