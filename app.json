@@ -1,0 +1,37 @@
+{
+  "expo": {
+    "name": "Doracle",
+    "slug": "Doracle-slug",
+    
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/DORACLEicon.png",
+    "splash": {
+      "image": "./assets/DORACLEsplash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#000000"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "bundleIdentifier": "com.espionage.doracle",
+      "buildNumber": "1.0.0",
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#FFFFFF"
+      },
+      "package": "com.espionage.doracle",
+      "versionCode": 1
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    }
+  }
+}
