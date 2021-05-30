@@ -65,82 +65,118 @@ const styles = StyleSheet.create({
   },
 });
 
-function FlatListBasics({ navigation }) {
-    const [first, setText] = useState('');
-    const [last, setText1] = useState('');
-    const [contact, setText2] = useState('');
-    const [email, setText3] = useState('');
-  return (
-    <View style={styles.container}>
-    <ScrollView>
-      <TouchableOpacity style={styles.FacebookStyle} 
-      onPress = {() => navigation.openDrawer()}
-      activeOpacity={0.1}>
- 
-         <Image 
-          source={require('../assets/hmb.png')} 
-          style={styles.ImageIconStyle} 
-          />
-       </TouchableOpacity>
-      <View style = {{alignContent:'center', paddingLeft: 10}}>
-      <Text style={styles.text}>{"\n"}First Name</Text>
-      </View>
-      <View style={styles.inputView}>
-          <TextInput
-            name='FirstName'
-            value={first}
-            style={styles.inputText}
-            placeholder='Enter First Name'
-            placeholderTextColor="#296306"
-            onChangeText={first => setText(first)}
-          />
-        </View>
 
+class FlatListBasics extends React.Component {
+
+  constructor(props) {
+    super(props)
+  
+    this.state = { firstname: "", lastname: "", contact: 1, email: "", id: "" }
+  }
+  
+  componentDidMount(){
+    fetch(`https://doracle-backend.herokuapp.com/hospital/show/IND2Sgy59`)
+    .then((response) => response.json())
+    .then((data2) => {
+        console.log(data2);
+        this.setState({firstname: data2.firstname, lastname: data2.lastname, contact: data2.contact, email: data2.email, id: data2._id});
+    });
+}
+handleSubmit = (event) => {
+    event.preventDefault();
+    fetch(`https://doracle-backend.herokuapp.com/hospital/update/${this.state.id}`, {
+        method: "POST",
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({firstname: this.state.firstname, lastname: this.state.lastname, email: this.state.email, contact: this.state.contact})
+        }).then((response) => response.json())
+            .then((json) => {
+                console.log(json);
+                // alert(json);
+            })
+
+            // window.location='/patient/'
+}
+// handleChange = (event) => {
+//     this.setState({ [event.target.name]: event.target.value})
+// }
+
+  render() {
+    const { navigation } = this.props;
+    return(
+      <View style={styles.container}>
+      <ScrollView>
+        <TouchableOpacity style={styles.FacebookStyle} 
+        onPress = {() => navigation.openDrawer()}
+        activeOpacity={0.1}>
+   
+           <Image 
+            source={require('../assets/hmb.png')} 
+            style={styles.ImageIconStyle} 
+            />
+         </TouchableOpacity>
         <View style = {{alignContent:'center', paddingLeft: 10}}>
-      <Text style={styles.text}>{"\n"}Last Name</Text>
-      </View>
-      <View style={styles.inputView}>
-          <TextInput
-            name='LastName'
-            value={last}
-            style={styles.inputText}
-            placeholder='Enter Last Name'
-            placeholderTextColor="#296306"
-            onChangeText={last => setText1(last)}
-          />
-        </View><View style = {{alignContent:'center', paddingLeft: 10}}>
-      <Text style={styles.text}>{"\n"}Contact Number</Text>
-      </View>
-      <View style={styles.inputView}>
-          <TextInput
-            name='Contact'
-            value={contact}
-            style={styles.inputText}
-            placeholder='Enter Contact'
-            placeholderTextColor="#296306"
-            onChangeText={contact => setText2(contact)}
-          />
-        </View><View style = {{alignContent:'center', paddingLeft: 10}}>
-      <Text style={styles.text}>{"\n"}Email</Text>
-      </View>
-      <View style={styles.inputView}>
-          <TextInput
-            name='email'
-            value={email}
-            style={styles.inputText}
-            placeholder='Enter Email'
-            placeholderTextColor="#296306"
-            onChangeText={email => setText3(email)}
-          />
+        <Text style={styles.text}>{"\n"}First Name</Text>
         </View>
-        <Text style={styles.text}>{"\n"}</Text>
-      <Button
-        title ="Update Records"
-        />
-        <Text style={styles.text}>{"\n"}</Text>
-    </ScrollView>
-    </View>
-  );
+        <View style={styles.inputView}>
+            <TextInput
+              name='firstname'
+              value={this.state.firstname}
+              style={styles.inputText}
+              placeholder='Enter First Name'
+              placeholderTextColor="#296306"
+              onChangeText={firstname => this.state({firstname})}
+            />
+          </View>
+  
+          <View style = {{alignContent:'center', paddingLeft: 10}}>
+        <Text style={styles.text}>{"\n"}Last Name</Text>
+        </View>
+        <View style={styles.inputView}>
+            <TextInput
+              name='lastname'
+              value={this.state.lastname}
+              style={styles.inputText}
+              placeholder='Enter Last Name'
+              placeholderTextColor="#296306"
+              onChangeText={lastname => this.setState({lastname})}
+            />
+          </View><View style = {{alignContent:'center', paddingLeft: 10}}>
+        <Text style={styles.text}>{"\n"}Contact Number</Text>
+        </View>
+        <View style={styles.inputView}>
+            <TextInput
+              name='contact'
+              value={this.state.contact.toString()}
+              style={styles.inputText}
+              keyboardType = 'numeric'
+              placeholder='Enter Contact'
+              placeholderTextColor="#296306"
+              onChangeText={contact => this.setState({contact})}
+            />
+          </View><View style = {{alignContent:'center', paddingLeft: 10}}>
+        <Text style={styles.text}>{"\n"}Email</Text>
+        </View>
+        <View style={styles.inputView}>
+            <TextInput
+              name='email'
+              value={this.state.email}
+              style={styles.inputText}
+              placeholder='Enter Email'
+              placeholderTextColor="#296306"
+              onChangeText={email => this.state({email})}
+            />
+          </View>
+          <Text style={styles.text}>{"\n"}</Text>
+        <Button onPress={this.handleSubmit}
+          title ="Update Records"
+          />
+          <Text style={styles.text}>{"\n"}</Text>
+      </ScrollView>
+      </View>
+    );
+  }
+
+
 }
 
 export default FlatListBasics;
