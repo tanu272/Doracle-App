@@ -36,7 +36,7 @@ export default class Login extends React.Component {
     const { email, password } = this.state
     try {
       if (email.length > 0 && password.length > 0) {
-        this.props.navigation.navigate('HAuth')
+        this.props.navigation.navigate('Hospital')
       }
     } catch (error) {
       alert(error)
