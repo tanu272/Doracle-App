@@ -1,5 +1,7 @@
 import React from 'react'
-import { StyleSheet, View, Button, TextInput, Text, Image } from 'react-native'
+import { StyleSheet, View, Button, TextInput, Text, Image, ActionSheetIOS } from 'react-native'
+import axios from "axios";
+import AsyncStorage from '@react-native-async-storage/async-storage'
 
 export default class Login extends React.Component {
   static navigationOptions = {  
@@ -19,45 +21,81 @@ export default class Login extends React.Component {
     },  
   };  
 
-  state = {
-    email: '',
-    password: ''
+  constructor(props) {
+    super(props)
+    this.checkToken();
+    this.state = {
+      patientID: '',
+      password: ''
+    }
+  }
+  
+  checkToken = async() => {
+    const token = await AsyncStorage.getItem("token");
+    
+    if(token)
+    {
+      alert("Already Logged In");
+      this.props.navigation.navigate('Patient')
+    }
+    else
+    {
+      this.props.navigation.navigate('PAuth')
+    }
   }
 
-  handleEmailChange = email => {
-    this.setState({ email })
+  handleIDChange = patientID => {
+    this.setState({ patientID })
   }
 
   handlePasswordChange = password => {
     this.setState({ password })
   }
 
-  onLogin = async () => {
-    const { email, password } = this.state
-    try {
-      if (email.length > 0 && password.length > 0) {
-        this.props.navigation.navigate('Patient')
-      }
-    } catch (error) {
-      alert(error)
-    }
-  }
+  
 
   goToSignup = () => this.props.navigation.navigate('PSignup')
+
+
+  doLogin() {
+    const {patientID, password} = this.state
+    const req = {
+      "patientID" : patientID,
+      "password" : password
+    }
+    axios
+      .post("https://doracle-backend.herokuapp.com/api/users/login", req)
+      .then(res => {
+        AsyncStorage.setItem("token", res.data.token)
+          .then(
+            res=> {
+              alert("Login Successfulyyy !")
+              this.props.navigation.navigate('Patient')
+            }
+          );
+      }, 
+      err => {
+        alert("Patient ID or Password is wrong");
+      }
+      )
+
+  }
+
+
   render() {
-    const { email, password } = this.state
+    const { patientID, password } = this.state
 
     return (
       <View style={styles.container}>
         <View style={styles.inputView} >
           <TextInput
             style={styles.inputText}
-            name='email'
-            value={email}
+            name='patientID'
+            value={patientID}
             placeholder='Enter patient ID'
             placeholderTextColor="#296306"
             autoCapitalize='none'
-            onChangeText={this.handleEmailChange}
+            onChangeText={this.handleIDChange}
           />
         </View>
         <View style={styles.inputView}>
@@ -71,7 +109,7 @@ export default class Login extends React.Component {
             onChangeText={this.handlePasswordChange}
           />
         </View>
-        <Button title='Login' onPress={this.onLogin} />
+        <Button title='Login' onPress={() => this.doLogin()} />
         <Text>{"\n"}</Text>
         <Button title='Forgot Password' onPress={this.goToSignup} />
       </View>
