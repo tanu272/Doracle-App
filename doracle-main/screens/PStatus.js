@@ -7,28 +7,38 @@ class Home extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      status: [],
       tableHead: ['Date', 'Time', 'Patient Condition', 'Extra Notes(optional)'],
       widthArr: [60, 50, 180, 105]
     }
   }
+
+  componentDidMount(){
+    fetch(`https://doracle-backend.herokuapp.com/hospital/show/IND2Sgy59/`)
+        .then((response) => response.json())
+        .then((data1) => {
+          this.setState({status: data1.stds})
+        });
+}
+
   render() {
- 
+
 
   const { navigation } = this.props;
   const state = this.state;
-  const data = [];
-    for (let i = 0; i < 24; i += 1) {
-      const dataRow = [];
-      dataRow.push(i+2+'/09/21');
-      if(i%2)
-        dataRow.push(`10 am`);
-      else
-        dataRow.push(`10 pm`);
-      dataRow.push(`-`);
-      dataRow.push(`-`);
-      data.push(dataRow);
-    }
+    const data = [];
+    var ups = state.status.map(person => {
 
+      const dataRow = [];
+      let x=person.date;
+      let mod_date=x.substring(0,10);
+      let mod_time=x.substring(12,19);
+      dataRow.push(mod_date);
+      dataRow.push(mod_time);
+      dataRow.push(person.note);
+      dataRow.push("-");
+      data.push(dataRow);
+    });
   return (
     
     <View style={styles.MainContainer}>
