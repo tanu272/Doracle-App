@@ -1,3 +1,4 @@
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import React from 'react';
 import {
   StyleSheet,
@@ -8,41 +9,54 @@ import {
   Button
 } from 'react-native';
 
-function Logout({navigation})
+export default class Logout extends React.Component
 {
-  return (
-    <View style= {{flex: 1}}>
-       <View style={styles.MainContainer}>
-        <TouchableOpacity style={styles.FacebookStyle} 
-      onPress = {() => navigation.openDrawer()}
-      activeOpacity={0.1}>
- 
-         <Image 
-          source={require('../assets/hmb.png')} 
-          style={styles.ImageIconStyle} 
-          />
-       </TouchableOpacity>
-       </View>
-       <View style={styles.MainContainer1}>
-        <Text style={{color:"#194002", fontSize:25, alignContent:'center'}}>
-        Are you sure you wanna logout?
-        <Text>{"\n"}</Text>
-        </Text>
-        <Button
-        title ="YES"
-        onPress={() =>
-          navigation.navigate('App')
+
+  doLogout() {
+
+    AsyncStorage.removeItem("token")
+      .then(
+        res=> {
+          alert("logout successfull !")
+          this.props.navigation.navigate('App')
         }
-        />
-        <Text>{"\n"}</Text>
-        <Button
-        title ="NO"
-        onPress={() =>
-          navigation.navigate('Home')}
-        />
-        </View>
-     </View>
-  );
+      )
+  }
+  render() {
+    const { navigation } = this.props;
+    return (
+      <View style= {{flex: 1}}>
+         <View style={styles.MainContainer}>
+          <TouchableOpacity style={styles.FacebookStyle} 
+        onPress = {() => navigation.openDrawer()}
+        activeOpacity={0.1}>
+   
+           <Image 
+            source={require('../assets/hmb.png')} 
+            style={styles.ImageIconStyle} 
+            />
+         </TouchableOpacity>
+         </View>
+         <View style={styles.MainContainer1}>
+          <Text style={{color:"#194002", fontSize:25, alignContent:'center'}}>
+          Are you sure you wanna logout?
+          <Text>{"\n"}</Text>
+          </Text>
+          <Button
+          title ="YES"
+          onPress={() => this.doLogout()}
+          />
+          <Text>{"\n"}</Text>
+          <Button
+          title ="NO"
+          onPress={() =>
+            navigation.navigate('Home')}
+          />
+          </View>
+       </View>
+    );
+  }
+ 
 }
 
 const styles = StyleSheet.create({
@@ -83,4 +97,3 @@ ImageIconStyle: {
 });
 
 
-export default Logout;
