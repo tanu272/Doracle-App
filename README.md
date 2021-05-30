@@ -130,3 +130,5 @@ Please read the [full text][code1] so that you can understand what actions will 
 ## 📄 License
 
 Doracle is MIT licensed, as found in the [LICENSE][l] file.
+
+[l]: https://github.com/tanu272/Doracle-App/blob/main/LICENSE
