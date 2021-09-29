@@ -52,6 +52,8 @@ hospitals.</strong><br>
 </h3>
 
 <h3>LINK TO DORACLE APP APK: <a href="https://drive.google.com/file/d/1J3YpNGtR3r_8_Aq4Xp7SSMD0pbD3UQj0/view?usp=sharing">HERE</a></h3>
+<h3>LINK TO DORACLE WEBSITE: <a href="https://doracle-webapp.vercel.app/">HERE</a></h3>
+
 <p>
   Doracle is a patient management system useful for hospitals as well as patients. We intend to develop a secure, scalable application that adopts a set of revolutionizing steps that will pave the way to a better-managed hospital that will be able to provide superior healthcare advantages to its patients. Families no longer have to wait in long queues in dire situations waiting to know how their patient is. They will be provided a unique login credential for their patient with which, they will be able to login into the application and access real-time updates on the treatment status of their patients.
 </p>
