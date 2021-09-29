@@ -5,7 +5,8 @@ import HLoginScreen from '../screens/HLogin'
 const AppNavigation = createStackNavigator(
   {
     Home: { screen: Home },
-    HLoginScreen: {screen: HLoginScreen}
+    HLoginScreen: {screen: HLoginScreen},
+    PLoginScreen: {screen :PLoginScreen;},
   },
   {
     initialRouteName: 'Home',    
